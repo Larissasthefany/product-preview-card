@@ -21,49 +21,159 @@
 }
 
 body{
-    background-color: var(--Cream);
-}
-
-main{
-    display: flex;
-    min-height: 100vw;
-    align-items: center;
-
-}
-
-.box{
-    max-width: 600px;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 0 13px 13px 0;
-}
-
-.wrapper{
-    display: grid;
-    grid-template-columns:  1fr 1fr;
-
-}
-
-img{
-    width: 250px;
-    height: 400px;
-    overflow: hidden;
-    border-radius: 13px 0 0 13px;
-}
- 
-.text {
-    color: var(--Very-dark-blue);
-    padding: 35px;
-    /* text-transform: uppercase; */
-}
-
-.titulo{
-    font-family: var(--font-Fraunces);
-    margin-top: 20px;
-}
-
-.paragrafo{
+    font-family: var(--font-Montserrat);
+    background-color: (--Cream);
     font-size: 14px;
-    margin: 20px 0 0 0;
+    min-height:100vh;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
 }
+
+.container{
+    margin: 30px auto;
+    padding: 0 30px;
+}
+
+.grid{
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: white ;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.imagem img{
+    max-width: 100%;
+    display: inherit;
+}
+
+.card-content{
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h6.pro-cat{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 13px;
+    color: var(--Dark-grayish-blue);
+    font-weight: 500;
+}
+
+h2.pro-name{
+    font-family: var(--font-Fraunces);
+    font-size: 34px;
+    line-height: 1em;
+    color: var(--Very-dark-blue);
+}
+
+p.paragrafo{
+    color: var(--Dark-grayish-blue);
+    line-height: 1.6em;
+}
+
+.preco{
+    display: flex;
+    align-items: center;
+}
+
+p.maior-preco{
+    font-family: var(--font-Fraunces);
+    color: var(--Dark-cyan);
+    font-size: 25px;
+    padding-right: 25px;
+}
+
+p.menor-preco{
+    color: var(--Dark-grayish-blue);
+    text-decoration: line-through;
+}
+
+button.comprar{
+    background-color: hsl(158, 36%, 37%);
+    border: none;
+    padding: 14px 0;
+    border-radius: 12px;
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color .3 ease;
+    width: 100%;
+}
+
+button.comprar:hover{
+    background-color: hsl(158, 36%, 23%);
+}
+
+button.comprar img{
+    padding-right: 7px;
+}
+
+@media only screen and (max-width: 628px){
+    .grid{
+        grid-template-columns: 1fr;
+    }
+
+    .imagem img{
+        max-height: 450px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-content{
+        display: block;
+    }
+
+    h6.pro-cat, h2.pro-name, p.maior-preco, p.menor-preco{
+        padding-bottom: 23px;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .container{
+        margin: 15px auto;
+        padding: 0 15px;
+    }
+
+    .imagem img{
+        max-height: 290px;
+    }
+
+    .card-content{
+        padding: 24px;
+    }
+
+    h6.pro-cat, h2.pro-name, p.maior-preco, p.menor-preco{
+        padding-bottom: 16px;
+
+    }
+
+    h2.pro-name{
+        font-size: 28px;
+    }
+
+    p.paragrafo{
+        font-size: 12px;
+    }
+
+    p.maior-preco{
+        font-size: 28px;
+    }
+
+    p.menor-preco{
+       padding: 7px 0; 
+    }
+
+    button.comprar{
+        padding: 12px 0;
+        font-size: 11px;
+    }
+}
+
+
 
